@@ -1,0 +1,53 @@
+FOLDERS-ROUTER
+//   .delete((req, res, next) => {
+//     FoldersService.deleteFolder(
+//       req.app.get('db'),
+//       req.params.id
+//     )
+//       .then((numRowsAffected) => {
+//         res.status(204).end();
+//       })
+//       .catch(next);
+//   })
+//   .patch(jsonParser, (req, res, next) => {
+//     const { folder_name } = req.body
+//     const folderToUpdate = { folder_name }
+
+//     const numberOfValues = Object.values(folderToUpdate).filter(Boolean).length
+//     if (numberOfValues === 0) {
+//       return res.status(400).json({ error: { message: `Request body must contain a 'name'`}
+//       })
+//     }
+//     const knexInstance = req.app.get('db')
+//     FoldersService.updateFolder(
+//       knexInstance, 
+//       req.params.id, 
+//       folderToUpdate
+//       )
+//       .then((numRowsAffected) => {
+//         res.status(204).end()
+//       })
+//       .catch(next)    
+//   });
+
+NOTES-ROUTER
+//   .patch(jsonParser, (req, res, next) => {
+//     const { note_name } = req.body
+//     const noteToUpdate = { note_name }
+
+//     const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length
+//     if (numberOfValues === 0) {
+//       return res.status(400).json({ error: { message: `Request body must contain a 'name'`}
+//       })
+//     }
+//     const knexInstance = req.app.get('db')
+//     NotesService.updateNote(
+//       knexInstance, 
+//       req.params.id, 
+//       noteToUpdate
+//       )
+//       .then((numRowsAffected) => {
+//         res.status(204).end()
+//       })
+//       .catch(next)    
+//   });
