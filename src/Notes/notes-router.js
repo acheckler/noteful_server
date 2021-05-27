@@ -4,11 +4,11 @@ const xss = require('xss')
 const NotesService = require('./notes-service')
 const path = require('path');
 
-const NotesRouter = express.Router()
+const notesRouter = express.Router()
 const jsonParser = express.json()
 
 
-NotesRouter
+notesRouter
 .route("/")
   .get((req, res, next) => {
     NotesService.getAllNotes(req.app.get('db'))
@@ -63,7 +63,7 @@ NotesRouter
   });
 
 
-  NotesRouter
+  notesRouter
   .route('/:note_id')
   .all((req, res, next) => {
     const knexInstance = req.app.get('db')
@@ -93,4 +93,4 @@ NotesRouter
       .catch(next)
   })
 
-module.exports = NotesRouter
+module.exports = notesRouter
